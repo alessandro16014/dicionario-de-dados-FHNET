@@ -67,19 +67,6 @@ Os dados do dicionário ficam no array `T` em `script.js`. Cada tabela tem nome,
 | DER | Modelo entidade-relacionamento (`assets/der.png`) |
 | Script DDL (`scriptmysql.sql`) | Criação do schema `assinatura_telecom` no MySQL |
 
-## Pendências antes da publicação
-
-O dicionário só deve ser publicado depois de alinhar os três artefatos de origem. Os pontos principais da análise de coerência:
-
-- Remover do DDL os resquícios do template Sakila (schema, placeholders e views).
-- Corrigir `vinculo_equipamento` no DDL: PK com `AUTO_INCREMENT`, nomes `id_assinatura` e `id_equipamento`, e `id_equipamento_ativo` como coluna gerada STORED com UNIQUE (RN05). Depois, atualizar essa tabela em `script.js`.
-- Incluir no DDL os CHECK, os índices e os defaults de TIMESTAMP previstos nos requisitos.
-- Padronizar os ENUMs (`Admin` ou `Administrador`; `estoque` ou `em_estoque`) no DDL, no DER e no documento.
-- Trocar "INT UNSIGNED" por "BIGINT UNSIGNED" no documento e no DER.
-- Resolver RF05 (descrição e equipamento da OS) e atualizar versão, data e histórico de revisões (v1.1).
-- Preencher a linha do professor e o sobrenome do representante na seção de validação.
-- Exportar o documento de requisitos em PDF e o DER em PNG de alta resolução.
-
 ## Tecnologias
 
 HTML5, CSS3 e JavaScript puro, com Panzoom.js 4.5.1 (CDN). Banco de dados documentado: MySQL 8 (InnoDB, utf8mb4).
